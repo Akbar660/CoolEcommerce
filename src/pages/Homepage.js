@@ -9,9 +9,9 @@ import { collection, addDoc, getDocs } from "firebase/firestore";
 const Homepage = () => {
   const [products, setProducts] = useState([]);
 
-  useEffect(()=>{
-    getdata()
-  },[])
+  useEffect(() => {
+    getdata();
+  }, []);
 
   async function getdata() {
     try {
@@ -34,22 +34,26 @@ const Homepage = () => {
 
   return (
     <Layout>
-
-        <div className="container">
-
-            <div className="row">
-                 {products.map((product)=>{
-                   return <div className="col-md-4"  key={product.id}>
-                       <div className="m-2 p-1 product">
-                           <p>{product.name}</p>
-                           <img src={product.imageURL} alt="" className="product-img" />
-                       </div>
-                   </div>
-                 })}
-            </div>
-
+      <div className="container">
+        <div className="row">
+          {products.map((product) => {
+            return (
+              <div className="col-md-4" key={product.id}>
+                <div className="m-2 p-1 product">
+                  <p>{product.name}</p>
+                  <div className="text-center">
+                    <img
+                      src={product.imageURL}
+                      alt=""
+                      className="product-img"
+                    />
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
-
+      </div>
     </Layout>
   );
 };

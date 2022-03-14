@@ -1,5 +1,5 @@
 .product-img{
-    height:200px;
+    height:260px;
        width: 150px;
 }
 .product{
@@ -9,4 +9,8 @@
 
 .product p{
     min-height: 4.5rem;
+}
+
+.text-center{
+    text-align: center;
 }
