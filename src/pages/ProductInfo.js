@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 
 const ProductInfo = () => {
   const [product, setProduct] = useState();
+  const [loading,setLoading]=useState(false)
   const params = useParams();
 
   useEffect(() => {
@@ -15,20 +16,23 @@ const ProductInfo = () => {
 
   async function getdata() {
     try {
+      setLoading(true)
       const productTemp = await getDoc(
         doc(fireDB, "products", params.productid)
       );
 
       // console.log(productTemp.data());
       setProduct(productTemp.data());
+      setLoading(false)
       console.log(product);
     } catch (error) {
       console.log(error);
+      setLoading(false)
     }
   }
 
   return (
-    <Layout>
+    <Layout loading={loading}>
      <div className="container">
        <div className="row justify-content-center">
          <div className="col-md-8">

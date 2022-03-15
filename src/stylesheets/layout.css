@@ -43,3 +43,14 @@ button{
 button:hover{
   background-color: orange;
 }
+
+.loader{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.spinner-border{
+  height: 100px;
+  width:100px
+}
