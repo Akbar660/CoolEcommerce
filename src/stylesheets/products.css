@@ -36,3 +36,15 @@
 .product-info-img{
     height: 70%;
 }
+.total-amount{
+    background-color:#D2B4BC ;
+    padding: 15px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    font-weight: bold;
+}
+.total-amount:hover{
+    background-color:#003F5C;
+    color: white;
+
+}
