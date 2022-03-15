@@ -6,7 +6,7 @@
     box-shadow: none !important;
 }
 
-.input{
+.input,textarea{
     margin-top: 15px !important;
 }
 .register-form{
