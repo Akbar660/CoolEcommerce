@@ -5,9 +5,16 @@ import fireDB from "../fireConfig";
 import { collection, addDoc, getDocs } from "firebase/firestore";
 
 // import { coolproducts } from "../ecommerce-products";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
 
 const Homepage = () => {
   const [products, setProducts] = useState([]);
+  const {cartItems}=useSelector(state=>state.cartReducer)
+  const dispatch=useDispatch()
+   const navigate=useNavigate();
+   
 
   useEffect(() => {
     getdata();
@@ -32,6 +39,14 @@ const Homepage = () => {
     }
   }
 
+  useEffect(()=>{
+      localStorage.setItem("cartItems",JSON.stringify(cartItems))
+  },[cartItems])
+
+  const addToCart=(product)=>{
+          dispatch({type:"ADD_TO_CART" , payload:product})
+  }
+
   return (
     <Layout>
       <div className="container">
@@ -39,15 +54,26 @@ const Homepage = () => {
           {products.map((product) => {
             return (
               <div className="col-md-4" key={product.id}>
-                <div className="m-2 p-1 product">
-                  <p>{product.name}</p>
-                  <div className="text-center">
-                    <img
-                      src={product.imageURL}
-                      alt=""
-                      className="product-img"
-                    />
+                <div className="m-2 p-1 product position-relative">
+                  <div className="product-content">
+                    <p>{product.name}</p>
+                    <div className="text-center">
+                      <img
+                        src={product.imageURL}
+                        alt=""
+                        className="product-img"
+                      />
+                    </div>
                   </div>
+            
+                  <div className="product-actions">
+                       <h2>{product.price} RS/-</h2>
+                       <div className="d-flex">
+                         <button onClick={()=>addToCart(product)} className="mx-2">ADD TO CART</button>
+                         <button onClick={()=>{navigate(`/productinfo/${product.id}`)}}>VIEW</button>
+                       </div>
+                  </div>
+
                 </div>
               </div>
             );

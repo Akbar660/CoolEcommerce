@@ -31,3 +31,15 @@ font-weight: bold;
 
 
 }
+
+button{
+  background-color: #003F5C;
+  box-shadow: none;
+  border: 1px solid white;
+  color: white;
+  padding: 6px;
+  font-weight: bold !important;
+}
+button:hover{
+  background-color: orange;
+}
