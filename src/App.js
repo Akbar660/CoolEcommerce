@@ -11,6 +11,7 @@ import Cartpage from './pages/Cartpage';
 
 import "./stylesheets/layout.css"
 import "./stylesheets/products.css"
+import "./stylesheets/auth.css"
 
 function App() {
   return (
