@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 
 import fireDB from "../fireConfig";
-import { collection, addDoc, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 
 // import { coolproducts } from "../ecommerce-products";
 import { useNavigate } from "react-router-dom";

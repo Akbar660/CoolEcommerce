@@ -9,7 +9,7 @@ export const coolproducts= [
   },
  {
     "price": "1800",
-    "description":"",
+    "description":"Inventively designed, the Cello Aspro Mavro Ball Pen has a comfortable grip for a tireless writing experience.This ball pen has a 0.7 mm nickel silver for pressure-free, fine writing.The Cello Aspro ball pen has a matte white and Cello Mavro ball pen has a matte black finish for a sleek and stylish look",
     "name":"Mi Smart Band 5 – India’s No. 1 Fitness Band, 1.1 (2.8 cm) AMOLED Color Display, Magnetic Charging, 2 Weeks Battery Life, Personal Activity...",
     "category": "electronics",
     "imageURL": "https://images-eu.ssl-images-amazon.com/images/I/41A6x4TXvHL._AC_SX184_.jpg",
@@ -17,7 +17,7 @@ export const coolproducts= [
   },
  {
     "price": "180",
-    "description":"",
+    "description":"1.1” Full touch AMOLED color display Battery runs up to 14 days on a single charge. Battery capacity : 125 mAh Magnetic charging – Hassle free charging PAI (Personal Activity Intelligence) – Single matrix to track your all fitness related activities.",
     "name":"Cello Pinpoint Ball Pen - Blue | Pack of 10 | Lightweight Ball Pens | Exam Pens with Grip | Ball Pens for Students | ball pens set for School and Office | Blue Ball Pens | Cello Stationery",
     "category": "electronics",
     "imageURL": "https://images-eu.ssl-images-amazon.com/images/I/51AqdEZ72KL._AC_SX184_.jpg",

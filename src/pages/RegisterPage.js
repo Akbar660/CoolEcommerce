@@ -18,6 +18,9 @@ const RegisterPage = () => {
       console.log(result)
       setLoading(false)
       toast.success("Registration successfull");
+      setEmail("")
+      setPassword("")
+      setcPassword("")
     } catch (error) {
       console.log(error);
       toast.error("Registration Failed");

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../components/Layout";
-
+import { useDispatch,useSelector } from "react-redux";
 import fireDB from "../fireConfig";
 import { getDoc, doc } from "firebase/firestore";
 import { useParams } from "react-router-dom";
@@ -9,6 +9,9 @@ const ProductInfo = () => {
   const [product, setProduct] = useState();
   const [loading,setLoading]=useState(false)
   const params = useParams();
+  const dispatch = useDispatch();
+
+const { cartItems } = useSelector((state) => state.cartReducer);
 
   useEffect(() => {
     getdata();
@@ -31,13 +34,21 @@ const ProductInfo = () => {
     }
   }
 
+ useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
+
+  const addToCart = (product) => {
+    dispatch({ type: "ADD_TO_CART", payload: product });
+  };
+
   return (
     <Layout loading={loading}>
      <div className="container">
        <div className="row justify-content-center">
          <div className="col-md-8">
          {product && (
-        <div>
+        <div className="product-height">
           <p>
             <b>{product.name}</b>
           </p>
@@ -45,7 +56,7 @@ const ProductInfo = () => {
           <hr />
           <p>{product.description}</p>
           <div className="d-flex justify-content-end my-3">
-            <button>ADD TO CART</button>
+            <button onClick={()=>addToCart(product)}>ADD TO CART</button>
           </div>
         </div>
       )}
