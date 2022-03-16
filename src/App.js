@@ -7,6 +7,8 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import ProductInfo from "./pages/ProductInfo";
 import Cartpage from "./pages/Cartpage";
+import Orderspage from "./pages/Orderspage";
+import Adminpage from "./pages/Adminpage";
 
 import "./stylesheets/layout.css";
 import "./stylesheets/products.css";
@@ -14,6 +16,8 @@ import "./stylesheets/auth.css";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+
 
 function App() {
   return (
@@ -46,6 +50,24 @@ function App() {
             element={
               <ProtectedRoutes>
                 <Cartpage />
+              </ProtectedRoutes>
+            }
+          />
+           <Route
+            path="/orders"
+            exact
+            element={
+              <ProtectedRoutes>
+                <Orderspage />
+              </ProtectedRoutes>
+            }
+          />
+             <Route
+            path="/admin"
+            exact
+            element={
+              <ProtectedRoutes>
+                <Adminpage />
               </ProtectedRoutes>
             }
           />
