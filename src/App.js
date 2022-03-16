@@ -8,7 +8,7 @@ import RegisterPage from "./pages/RegisterPage";
 import ProductInfo from "./pages/ProductInfo";
 import Cartpage from "./pages/Cartpage";
 import Orderspage from "./pages/Orderspage";
-import Adminpage from "./pages/Adminpage";
+
 
 import "./stylesheets/layout.css";
 import "./stylesheets/products.css";
@@ -62,15 +62,7 @@ function App() {
               </ProtectedRoutes>
             }
           />
-             <Route
-            path="/admin"
-            exact
-            element={
-              <ProtectedRoutes>
-                <Adminpage />
-              </ProtectedRoutes>
-            }
-          />
+        
 
            <Route path="/login" exact element={<LoginPage />} />
           <Route path="/register" exact element={<RegisterPage />} />
